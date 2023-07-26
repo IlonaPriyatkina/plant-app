@@ -9,9 +9,11 @@ import Basket from '../basket/Basket';
 
 
 
-const Header = () => {
+
+const Header = (props) => {
 	const [miniMenuVisible, setMiniMenuVisible] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
+	const { order, removeFromOrder } = props
 
 	const toggleMiniMenu = () => {
 		setMiniMenuVisible(!miniMenuVisible);
@@ -64,8 +66,8 @@ const Header = () => {
 						<AddShoppingCartIcon />
 					</IconButton>
 					<Basket
-            // order={order}
-            // removeFromOrder={removeFromOrder}
+            order={order}
+            removeFromOrder={removeFromOrder}
             cartOpen={isCartOpen}
             closeCart={() => setCartOpen(false)}
         />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import shopGalleryStyles from './shop_gallery_style.module.scss';
 import { Grid } from "@mui/material";
 import GoodsItem from './GoodsItem';

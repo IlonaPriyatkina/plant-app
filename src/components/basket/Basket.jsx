@@ -4,26 +4,18 @@ import React, { useState } from 'react';
 import { Divider } from '@material-ui/core';
 import GoodsItem from "../gallery/GoodsItem";
 import basketStyles from './basket_style.module.scss'
-// const {
-//     cartOpen,// состояние тру или фолс передаем в Drawer - open={cartOpen}
-//     closeCart = Function.prototype,
-
-//     order = [],//заказ
-//     removeFromOrder//удаление из заказа
-
-// } = props;
 
 
 
-const Basket = ({cartOpen,closeCart}) => {
-    // const [isCartOpen, setCartOpen] = useState(false);
-    // // const cartOpen = isCartOpen;
-    // const closeCart = () => {
-    //     setCartOpen(false);
-    // }
-    // const { order = [], removeFromOrder } = props;
-    const order = [];
-    const removeFromOrder = () => { }
+
+const Basket = (props) => {
+  
+    const {
+        cartOpen,
+        closeCart = Function.prototype,
+        order = [],
+        removeFromOrder
+    } = props;
 
     return (
 
@@ -46,7 +38,7 @@ const Basket = ({cartOpen,closeCart}) => {
                 ) : (
                     <>
                         {order.map((item) => (
-                            <GoodsItem key={item.name} removeFromOrder={removeFromOrder} {...item} />
+                            <GoodsItem key={item.name} removeFromOrder={removeFromOrder} plant ={item} />
                         ))}
                         <Divider />
                         <ListItem>
