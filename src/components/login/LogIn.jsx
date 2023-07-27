@@ -48,12 +48,12 @@ const LogIn = () => {
       const { email, password } = parsedData;
       if (email === data.email && password === data.password) {
         alert('Successful login!');
-        setLoginError(false); 
+        setLoginError(false);
       } else {
-        setLoginError(true); 
+        setLoginError(true);
       }
     } else {
-      setLoginError(true); 
+      setLoginError(true);
     }
   };
 
@@ -63,6 +63,9 @@ const LogIn = () => {
         <Container component="main" maxWidth="xs" className={logInStyles.logIn_box_form} sx={{ bgcolor: defaultTheme.palette.secondary.main }}>
           <CssBaseline />
           <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit(handleLogin)}
             sx={{
               marginTop: 8,
               display: 'flex',
@@ -75,11 +78,7 @@ const LogIn = () => {
             <Typography component="h1" variant="h5">
               Log in
             </Typography>
-
             <Box
-              component="form"
-              noValidate
-              onSubmit={handleSubmit(handleLogin)}
               sx={{
                 marginTop: 3,
                 alignItems: 'center',
@@ -127,7 +126,7 @@ const LogIn = () => {
             </Box>
             {loginError && (
               <div className={logInStyles.error_message}>
-               Wrong email or password. Please try again.
+                Wrong email or password. Please try again.
               </div>
             )}
             <button className={logInStyles.logIn_btn} type='submit' >Log in</button>

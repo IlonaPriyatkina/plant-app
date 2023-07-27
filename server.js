@@ -15,7 +15,6 @@ app.get('/plants', async (req, res) => {
       'X-RapidAPI-Host': 'house-plants2.p.rapidapi.com',
     },
   }
-
   try {
     const response = await axios.request(options)
     res.send(response.data)
@@ -32,7 +31,6 @@ app.listen(PORT, () => {
 const getToken = async () => {
   const params = {
     origin: 'http://localhost',
-
     token: 'AlTv48GMYn_qNPhV4Nd3-b0RnkeZ9kt0ySiW4YxaUiU',
   }
 

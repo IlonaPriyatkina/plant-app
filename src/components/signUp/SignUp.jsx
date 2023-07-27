@@ -25,7 +25,6 @@ const defaultTheme = createTheme({
 
 );
 
-
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -38,7 +37,6 @@ const SignUp = () => {
   const saveFormDataToLocalStorage = () => {
     localStorage.setItem('formData', JSON.stringify(formData));
   };
-
 
   const handleChange = (event) => {
     setFormData((prevFormData) => ({
