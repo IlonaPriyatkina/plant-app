@@ -8,10 +8,8 @@ import SignUp from './components/signUp/SignUp'
 import LogIn from './components/login/LogIn'
 import './App.css'
 
-
 function App() {
   const [order, setOrder] = useState([]);
-
 
   const addToOrder = (goodsItem) => {
     let quantity = 1;
@@ -25,7 +23,6 @@ function App() {
 
       setOrder(order.map((item) => {
         if (item.id !== goodsItem.id) return item;
-
         return {
           ...item,
           quantity,
@@ -42,11 +39,8 @@ function App() {
       ],
       );
     }
-
   };
-  // const removeFromOrder = (goodsItem) => {
-  //   setOrder(order.filter((item) => item.id !== goodsItem.id));
-  // };
+  
   const removeFromOrder = (goodsItem) => {
     const indexInOrder = order.findIndex((item) => item.id === goodsItem.id);
   
@@ -57,13 +51,11 @@ function App() {
       if (updatedOrder[indexInOrder].quantity === 0) {
         updatedOrder.splice(indexInOrder, 1); 
       }
-  
+
       setOrder(updatedOrder);
     }
   };
   
-  
-
   return (
     <div>
       <BrowserRouter>
@@ -74,7 +66,9 @@ function App() {
         />
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/main' element={<Main />} />
+          <Route path='/main' element={<Main
+            addToOrder={addToOrder}
+          />} />
           <Route path='/shop' element={<ShopGallery
             addToOrder={addToOrder}
           />} />
@@ -85,7 +79,6 @@ function App() {
       </BrowserRouter>
     </div>
   )
-
 }
 
 export default App;

@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 import Basket from '../basket/Basket';
 
 
-
-
 const Header = (props) => {
 	const [miniMenuVisible, setMiniMenuVisible] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
@@ -63,7 +61,6 @@ const Header = (props) => {
 					<ul className={headerStyles.list}>
 						<li className={headerStyles.header_li}><Link to="/main" >Home</Link></li>
 						<li className={headerStyles.header_li}><Link to="/shop" >Shop</Link></li>
-						<li className={headerStyles.header_li}>Contact</li>
 					</ul>
 				</nav>
 				<div>
@@ -72,8 +69,6 @@ const Header = (props) => {
 						color='inherit'
 						onClick={handleCartOpen}
 					>
-						
-
 						<AddShoppingCartIcon />
 					</IconButton>
 					<Basket
@@ -84,8 +79,6 @@ const Header = (props) => {
 						addToOrder={addToOrder}
 					/>
 				</div>
-
-
 			</div>
 		</header>
 	)

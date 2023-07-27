@@ -26,37 +26,35 @@ const defaultTheme = createTheme({
 
 );
 
-const handleLogin = (data) => {
-  console.log(data);
-
-  const storedFormData = localStorage.getItem('formData');
-  if (storedFormData) {
-    const parsedData = JSON.parse(storedFormData);
-    const { email, password } = parsedData;
-    if (email === data.email && password === data.password) {
-      alert('You are welcome!');
-    } else {
-      alert('No contact details');
-    }
-  } else {
-    alert('No contact details');
-  }
-
-};
-
-
 const LogIn = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const { register, setValue, handleSubmit, formState: { errors } } = useForm();
+  const [loginError, setLoginError] = useState(false);
 
   const handleChange = (event) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       [event.target.name]: event.target.value,
     }));
+  };
+
+  const handleLogin = (data) => {
+    const storedFormData = localStorage.getItem('formData');
+    if (storedFormData) {
+      const parsedData = JSON.parse(storedFormData);
+      const { email, password } = parsedData;
+      if (email === data.email && password === data.password) {
+        alert('Successful login!');
+        setLoginError(false); 
+      } else {
+        setLoginError(true); 
+      }
+    } else {
+      setLoginError(true); 
+    }
   };
 
   return (
@@ -127,6 +125,11 @@ const LogIn = () => {
                 </Grid>
               </Grid>
             </Box>
+            {loginError && (
+              <div className={logInStyles.error_message}>
+               Wrong email or password. Please try again.
+              </div>
+            )}
             <button className={logInStyles.logIn_btn} type='submit' >Log in</button>
           </Box>
         </Container>

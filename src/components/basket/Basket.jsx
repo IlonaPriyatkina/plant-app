@@ -3,13 +3,8 @@ import { ShoppingBasket, Close } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { Divider } from '@material-ui/core';
 import GoodsItem from "../gallery/GoodsItem";
-import basketStyles from './basket_style.module.scss'
-
-
-
 
 const Basket = (props) => {
-  
     const {
         cartOpen,
         closeCart = Function.prototype,
@@ -19,13 +14,12 @@ const Basket = (props) => {
     } = props;
 
     return (
-
         <Drawer
             anchor="right"
             open={cartOpen}
             onClose={closeCart}
         >
-            <List sx={{ width: '400px' }}>
+            <List sx={{ width: '500px' }}>
                 <ListItem>
                     <ListItemIcon>
                         <ShoppingBasket />

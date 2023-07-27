@@ -13,6 +13,13 @@
   color: #25523B;
   line-height: 22px;
   font-family: 'Montserrat';
+  
+  .remove_btn{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border-radius: 100%;
+  }
 
   &_img {
     border-radius: 8px;
@@ -25,7 +32,6 @@
     line-height: 32px;
     align-items: start;
   
- 
     .product_name {
       font-size: 26px;
       font-weight: 600;
@@ -41,7 +47,6 @@
       line-height: 18px;
     }
   }
-
 
   &_btn {
     position: absolute;
@@ -73,6 +78,14 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+  }
+
+  .count_btn{
+    border:none;
+    border-radius: 100px;
+    background: rgb(222, 238, 198);
+    height: 30px;
+    width: 30px;
   }
 
 }
