@@ -68,4 +68,11 @@
     box-shadow: inset 0px 5px 10px 5px rgba(57, 117, 50, 0.5);
     transform: translate(-5px);
   }
+
+  .count_btn_container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
 }

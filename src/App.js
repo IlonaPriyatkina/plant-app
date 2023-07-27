@@ -44,12 +44,25 @@ function App() {
     }
 
   };
+  // const removeFromOrder = (goodsItem) => {
+  //   setOrder(order.filter((item) => item.id !== goodsItem.id));
+  // };
   const removeFromOrder = (goodsItem) => {
-    setOrder(order.filter((item) => item.id !== goodsItem));
+    const indexInOrder = order.findIndex((item) => item.id === goodsItem.id);
+  
+    if (indexInOrder > -1) {
+      const updatedOrder = [...order];
+      updatedOrder[indexInOrder].quantity -= 1;
+  
+      if (updatedOrder[indexInOrder].quantity === 0) {
+        updatedOrder.splice(indexInOrder, 1); 
+      }
+  
+      setOrder(updatedOrder);
+    }
   };
-
-
-
+  
+  
 
   return (
     <div>
@@ -57,6 +70,7 @@ function App() {
         <Header
           order={order}
           removeFromOrder = {removeFromOrder}
+          addToOrder={addToOrder}
         />
         <Routes>
           <Route path='/' element={<Main />} />

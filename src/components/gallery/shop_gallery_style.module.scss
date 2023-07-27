@@ -1,12 +1,15 @@
-.shop_gallery_container{
+.shop_gallery_container {
   margin: 100px auto 100px;
   max-width: 1279px;
-  
+  height: 1600px;
 }
 
-.textFiled_container{
+.textFiled_container {
   margin-bottom: 50px;
 }
 
-
-
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}

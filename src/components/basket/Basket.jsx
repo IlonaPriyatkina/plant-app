@@ -14,13 +14,14 @@ const Basket = (props) => {
         cartOpen,
         closeCart = Function.prototype,
         order = [],
-        removeFromOrder
+        removeFromOrder,
+        addToOrder
     } = props;
 
     return (
 
         <Drawer
-            anchor="right"// відвигается справа екрана
+            anchor="right"
             open={cartOpen}
             onClose={closeCart}
         >
@@ -38,7 +39,13 @@ const Basket = (props) => {
                 ) : (
                     <>
                         {order.map((item) => (
-                            <GoodsItem key={item.name} removeFromOrder={removeFromOrder} plant ={item} />
+                            <GoodsItem 
+                            key={item.name} 
+                            removeFromOrder={removeFromOrder} 
+                            plant ={item}
+                            mode = 'cart'
+                            addToOrder={addToOrder}
+                            />
                         ))}
                         <Divider />
                         <ListItem>

@@ -13,7 +13,7 @@ import Basket from '../basket/Basket';
 const Header = (props) => {
 	const [miniMenuVisible, setMiniMenuVisible] = useState(false);
 	const [isCartOpen, setCartOpen] = useState(false);
-	const { order, removeFromOrder } = props
+	const { order, removeFromOrder, addToOrder } = props
 
 	const toggleMiniMenu = () => {
 		setMiniMenuVisible(!miniMenuVisible);
@@ -35,8 +35,16 @@ const Header = (props) => {
 	};
 
 	const handleCartOpen = () => {
-    setCartOpen(true); 
-  };
+		setCartOpen(true);
+	};
+
+	const countCart = (order) => {
+		return order.reduce((result, el) => {
+			result += el.quantity
+			return result
+		}, 0)
+	}
+	const count = countCart(order)
 
 	return (
 		<header className={headerStyles.header}>
@@ -59,18 +67,22 @@ const Header = (props) => {
 					</ul>
 				</nav>
 				<div>
+				{!!count && count}
 					<IconButton
 						color='inherit'
 						onClick={handleCartOpen}
 					>
+						
+
 						<AddShoppingCartIcon />
 					</IconButton>
 					<Basket
-            order={order}
-            removeFromOrder={removeFromOrder}
-            cartOpen={isCartOpen}
-            closeCart={() => setCartOpen(false)}
-        />
+						order={order}
+						removeFromOrder={removeFromOrder}
+						cartOpen={isCartOpen}
+						closeCart={() => setCartOpen(false)}
+						addToOrder={addToOrder}
+					/>
 				</div>
 
 

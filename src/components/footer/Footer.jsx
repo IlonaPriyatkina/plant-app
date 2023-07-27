@@ -15,19 +15,16 @@ const Footer = () => {
             <span className={footerStyles.logo_name}>Oak tree</span>
           </div>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-          </p>
+
           <div className={footerStyles.social_media_icons}>
-            <a href='#'>
+            <a href='https://www.facebook.com/delorna.janemay' target='_blank' rel='noopener noreferrer'>
               <img className={footerStyles.fb_img} src={fb} alt='facebook-icon' />
             </a>
-            <a href='#'>
-              <img className={footerStyles.insta_img} src={insta} alt='facebook-icon' />
+            <a href='https://www.instagram.com/ilona.priyatkina/?hl=uk' target='_blank' rel='noopener noreferrer'>
+              <img className={footerStyles.insta_img} src={insta} alt='instagram-icon' />
             </a>
-            <a href='#'>
-              <img className={footerStyles.ld_img} src={ld} alt='facebook-icon' />
+            <a href='https://www.linkedin.com/in/ilona-priyatkina-167a01105/' target='_blank' rel='noopener noreferrer'>
+              <img className={footerStyles.ld_img} src={ld} alt='linkedin-icon' />
             </a>
           </div>
         </div>
@@ -35,15 +32,20 @@ const Footer = () => {
         <form className={footerStyles.footer_form}></form>
 
         <div className={footerStyles.footer_contacts}>
-          <h3>Community</h3>
+          <h3>Contacts</h3>
           <ul className={footerStyles.footer_ul}>
-            <li><p>Phone Numbers: Main Office: +380 12-345-6789 
-              <br/>
-              Sales Department: +380 98-765-4321</p></li>
-            <li>Address: Street: Green Street, 123
-            <br/>City: Lviv 
-            <br/>Country: Ukraine 
-            <br/>ZIP Code: 98765</li>
+            <li>Phone Numbers: Main Office: +380 12-345-6789</li>
+            <li> Sales Department: +380 98-765-4321</li>
+            <li>Address: Street: Green Street, 123</li>
+
+          </ul>
+        </div>
+        <div className={footerStyles.footer_contacts}>
+          <ul className={footerStyles.footer_ul}>
+            <li><h3>Contacts</h3></li>
+            <li>City: Lviv
+              <br />Country: Ukraine
+              <br />ZIP Code: 98765</li>
             <li>Email: info@oaktree.com</li>
           </ul>
         </div>
@@ -53,7 +55,7 @@ const Footer = () => {
           <button className={footerStyles.btn}>Register</button>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }
 
