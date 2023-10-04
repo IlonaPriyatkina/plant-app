@@ -65,7 +65,8 @@ function App() {
           addToOrder={addToOrder}
         />
         <Routes>
-          <Route path='/' element={<Main />} />
+          <Route path='/' element={<Main 
+          addToOrder={addToOrder}/>} />
           <Route path='/main' element={<Main
             addToOrder={addToOrder}
           />} />
